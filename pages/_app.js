@@ -1,7 +1,24 @@
-import '../styles/globals.css'
+import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+// React Query의 QueryClient 설정. 나중에 추가해줄 예정이다
+const queryOption = {
+  defaultOptions: {
+    queries: {},
+  },
+};
 
-export default MyApp
+const App = ({ Component, pageProps }) => {
+  const [queryClient] = useState(() => new QueryClient(queryOption));
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
+};
+
+export default App;

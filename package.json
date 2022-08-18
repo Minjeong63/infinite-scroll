@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "7003": "next dev -p 7003",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-lazy-load-image-component": "^1.5.5",
+    "react-query": "^3.39.2",
+    "sass": "^1.54.4",
+    "scss": "^0.2.4",
+    "use-local-storage": "^2.3.6"
   },
   "devDependencies": {
     "eslint": "8.22.0",
