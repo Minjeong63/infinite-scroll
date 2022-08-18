@@ -8,6 +8,12 @@ import style from "../styles/pokemon.module.scss";
 
 const PokemonCard = ({ id, name }) => {
   const target = useRef(null);
+  // useRef : 리렌더링 하지 않음, 컴포넌트의 속성만 조회 & 수정함
+  // useRef() 를 사용할 때?
+  // 1. 컴포넌트에 focus를 위치시킬 필요가 있는 경우
+  // 2. 속성 값을 초기화(clear)할 필요가 있는 경우
+  // 3. useRef로 컴포넌트 안의 변수 관리하기(컴포넌트의 속성 정보를 조회 & 수정할 때 & 리렌더링 하지 않으면서)
+
   const [visible, setVisible] = useState(false);
 
   const [scrollY, setScrollY] = useLocalStorage("poke_list_scroll", 0);
